@@ -1,0 +1,50 @@
+{
+  "name": "kuzzle-plugin-braintree",
+  "version": "1.0.0",
+  "description": "Accept payment in your application and make your business scale well!",
+  "author": {
+    "name": "Andréas 'ScreamZ' Hanss",
+    "url": "https://github.com/ScreamZ"
+  },
+  "main": "./src/braintree.js",
+  "pluginInfo": {
+    "defaultConfig": {
+      "isSandbox": true,
+      "merchantId": "useYourMerchantId",
+      "publicKey": "useYourPublicKey",
+      "privateKey": "useYourPrivateKey"
+    }
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "braintree": "^1.42.0"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/ScreamZ/kuzzle-plugin-braintree",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ScreamZ/kuzzle-plugin-braintree.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ScreamZ/kuzzle-plugin-braintree/issues"
+  },
+  "directories": {
+    "lib": "./src",
+    "example": "./examples"
+  },
+  "keywords": [
+    "payment",
+    "paypal",
+    "credit",
+    "card",
+    "kuzzle",
+    "braintree",
+    "plugin"
+  ],
+  "devDependencies": {
+    "eslint": "^3.9.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.3.1",
+    "eslint-plugin-standard": "^2.0.1"
+  }
+}
