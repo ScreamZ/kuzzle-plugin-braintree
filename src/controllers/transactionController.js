@@ -1,6 +1,4 @@
-'use strict'
-
-const BraintreeController = require('./braintreeController')
+import BraintreeController from './braintreeController'
 
 class TransactionController extends BraintreeController {
   generateClientToken (req) {
@@ -28,7 +26,7 @@ class TransactionController extends BraintreeController {
 
     // Anonymous transaction
     if (currentUserID === -1) {
-      return this.braintreeService.createTransaction(transactionAmount, nonceFromTheClient, null)
+      return this.braintreeService.createTransaction(transactionAmount, nonceFromTheClient)
         .then(res => this.createResponseObject(req, res))
         .catch(err => this.createResponseObject(req, err))
     }
@@ -55,4 +53,4 @@ class TransactionController extends BraintreeController {
   }
 }
 
-module.exports = TransactionController
+export default TransactionController
