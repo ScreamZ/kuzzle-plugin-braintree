@@ -1,6 +1,4 @@
-'use strict'
-
-const bluebird = require('bluebird')
+import bluebird from 'bluebird'
 
 class BraintreeService {
 
@@ -21,7 +19,7 @@ class BraintreeService {
       })
   }
 
-  createTransaction (amount, paymentMethodNonce, customerID) {
+  createTransaction (amount, paymentMethodNonce, customerID = null) {
     return this.transaction.saleAsync({
       amount: amount,
       customerId: customerID,
@@ -33,4 +31,4 @@ class BraintreeService {
   }
 }
 
-module.exports = BraintreeService
+export default BraintreeService

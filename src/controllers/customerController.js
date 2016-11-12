@@ -1,6 +1,4 @@
-'use strict'
-
-const BraintreeController = require('./braintreeController')
+import BraintreeController from './braintreeController'
 
 class CustomerController extends BraintreeController {
 
@@ -10,4 +8,4 @@ class CustomerController extends BraintreeController {
 
 }
 
-module.exports = CustomerController
+export default CustomerController

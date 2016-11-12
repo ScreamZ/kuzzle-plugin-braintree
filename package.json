@@ -6,7 +6,7 @@
     "name": "Andréas 'ScreamZ' Hanss",
     "url": "https://github.com/ScreamZ"
   },
-  "main": "./src/braintree.js",
+  "main": "./dist/braintree.js",
   "pluginInfo": {
     "defaultConfig": {
       "isSandbox": true,
@@ -42,6 +42,8 @@
     "plugin"
   ],
   "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
     "eslint": "^3.9.1",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.3.1",

@@ -1,5 +1,3 @@
-'use strict'
-
 class BraintreeController {
 
   constructor (context, braintreeService) {
@@ -20,4 +18,4 @@ class BraintreeController {
   }
 }
 
-module.exports = BraintreeController
+export default BraintreeController

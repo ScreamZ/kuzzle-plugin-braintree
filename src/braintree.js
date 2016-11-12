@@ -1,12 +1,11 @@
-'use strict'
+import braintree from 'braintree'
 
-const braintree = require('braintree')
-const TransactionController = require('./controllers/transactionController')
-const CustomerController = require('./controllers/customerController')
-const ControllersCollection = require('./config/controllers')
-const RoutesCollections = require('./config/routes')
+import TransactionController from './controllers/transactionController'
+import CustomerController from './controllers/customerController'
+import BraintreeService from './services/braintreeService'
 
-const BraintreeService = require('./services/braintreeService')
+import ControllersCollection from './config/controllers'
+import RoutesCollection from './config/routes'
 
 /**
  * Plugin setup
@@ -17,7 +16,7 @@ class Braintree {
     this.isDummy = false
     this.context = null
     this.controllers = ControllersCollection
-    this.routes = RoutesCollections
+    this.routes = RoutesCollection
   }
 
   /**
@@ -64,4 +63,4 @@ class Braintree {
   }
 }
 
-module.exports = Braintree
+export default Braintree
