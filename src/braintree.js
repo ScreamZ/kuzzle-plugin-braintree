@@ -34,6 +34,10 @@ class Braintree {
       publicKey: 'n6hzj76hshx46z3z',
       privateKey: '24c6ceffc07d027a9dcceeb32a015852'
     }
+
+    if (!config.merchantId || !config.privateKey || !config.privateKey) {
+      throw new Error('You must define Braintree configuration before loading the plugin!')
+    }
     this.context = context
 
     this.gateway = braintree.connect({
@@ -60,6 +64,7 @@ class Braintree {
    * Init services thats will be injected into the application
    */
   initServices () {
+    if (!this.context || !this.gateway) return
     this.braintreeService = new BraintreeService(this.context, this.gateway)
   }
 }
