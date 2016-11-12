@@ -1,3 +1,4 @@
 module.exports = {
-  'braintree': 'BraintreeController'
+  'transaction': 'TransactionController',
+  'customer': 'CustomerController'
 }

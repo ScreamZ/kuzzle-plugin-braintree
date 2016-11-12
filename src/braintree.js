@@ -1,9 +1,12 @@
 'use strict'
 
 const braintree = require('braintree')
-const BraintreeController = require('./controllers/braintreeController')
+const TransactionController = require('./controllers/transactionController')
+const CustomerController = require('./controllers/customerController')
 const ControllersCollection = require('./config/controllers')
 const RoutesCollections = require('./config/routes')
+
+const BraintreeService = require('./services/braintreeService')
 
 /**
  * Plugin setup
@@ -40,13 +43,25 @@ class Braintree {
       privateKey: config.privateKey
     })
 
+    this.initServices()
+
     return this
   }
 
-  BraintreeController () {
-    return new BraintreeController(this.context, this.gateway)
+  TransactionController () {
+    return new TransactionController(this.context, this.braintreeService)
   }
 
+  CustomerController () {
+    return new CustomerController(this.context, this.braintreeService)
+  }
+
+  /**
+   * Init services thats will be injected into the application
+   */
+  initServices () {
+    this.braintreeService = new BraintreeService(this.context, this.gateway)
+  }
 }
 
 module.exports = Braintree
