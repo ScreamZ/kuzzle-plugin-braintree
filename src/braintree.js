@@ -68,4 +68,5 @@ class Braintree {
   }
 }
 
-export default Braintree
+// Workaround see https://medium.com/@kentcdodds/misunderstanding-es6-modules-upgrading-babel-tears-and-a-solution-ad2d5ab93ce0#.wndli85pv
+module.exports = Braintree
