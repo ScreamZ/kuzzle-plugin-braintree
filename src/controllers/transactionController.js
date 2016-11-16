@@ -2,7 +2,7 @@ import BraintreeController from './braintreeController'
 
 class TransactionController extends BraintreeController {
   generateClientToken (req) {
-    return this.clientToken.generateAsync({})
+    return this.braintreeService.clientToken.generateAsync({})
       .then(res => this.createResponseObject(req, res))
   }
 

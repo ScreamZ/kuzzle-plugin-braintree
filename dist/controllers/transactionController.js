@@ -32,7 +32,7 @@ var TransactionController = function (_BraintreeController) {
     value: function generateClientToken(req) {
       var _this2 = this;
 
-      return this.clientToken.generateAsync({}).then(function (res) {
+      return this.braintreeService.clientToken.generateAsync({}).then(function (res) {
         return _this2.createResponseObject(req, res);
       });
     }
